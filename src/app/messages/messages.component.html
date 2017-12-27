@@ -1,0 +1,29 @@
+  <div class="main-content">
+      <div class="container-fluid">
+          <div class="row">
+              <div class="col-md-12">
+                  <div class="card" >
+                      <div class="header text-center">
+                          <h3 class="title">Logs Paper</h3>
+                          <p class="category"> All messages action during your session ...</p>
+                          <br>
+                      </div>
+                      <div class="content table-responsive table-full-width">
+                          <table class="table table-striped">
+                              <thead>
+                                  <th>Messages action</th>
+                              </thead>
+                              <tbody *ngIf="messageService.messages.length" >
+                                  <tr *ngFor='let message of messageService.messages'>
+                                      <td class="text-center"> {{message}}</td>
+                                  </tr>
+                              </tbody>
+                          </table>
+                          <div class="center"><button class="text-center btn btn-danger btn-fill btn-wd " type="button"  (click)="messageService.clear()">Clear</button></div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+  
