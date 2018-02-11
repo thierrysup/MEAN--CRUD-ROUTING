@@ -5,7 +5,7 @@ import { FooterComponent } from './footer.component';
 
 @NgModule({
   imports: [
-    CommonModule,RouterModule
+    CommonModule, RouterModule
   ],
   declarations: [FooterComponent],
   exports: [FooterComponent]

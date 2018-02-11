@@ -4,54 +4,39 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule, Routes } from '@angular/router';
 
-import { AppComponent } from './app.component';
 import { AppRoutes } from './app.routing';
 import {SideBarModule} from './side-bar/side-bar.module';
 import {NavBarModule} from './nav-bar/nav-bar.module';
 import {FooterModule} from './footer/footer.module';
 
-import { BookComponent } from './book/book.component';
-import { BookDetailComponent } from './book-detail/book-detail.component';
-import { BookCreateComponent } from './book-create/book-create.component';
-import { BookEditComponent } from './book-edit/book-edit.component';
+import {MessageService} from './services/message/message.service';
+import {ArticleService} from './services/providers';
+import {ClientService} from './services/providers';
+import {AppComponent} from './app.component';
 import { MessagesComponent } from './messages/messages.component';
-import {BookService} from './book.service';
-import {MessageService} from './message.service';
+import { ClientListComponent } from './entities/client/client-list/client-list.component';
+import { ClientCreateComponent } from './entities/client/client-create/client-create.component';
+import { ClientDetailComponent } from './entities/client/client-detail/client-detail.component';
+import { ClientEditComponent } from './entities/client/client-edit/client-edit.component';
 
-/* const appRoutes: Routes = [
-  {
-    path: 'books',
-    component: BookComponent,
-    data: { title: 'Book List' }
-  },
-  {
-    path: 'book-details/:id',
-    component: BookDetailComponent,
-    data: { title: 'Book Details' }
-  },
-  {
-    path: 'book-create',
-    component: BookCreateComponent,
-    data: { title: 'Create Book' }
-  },
-  {
-    path: 'book-edit/:id',
-    component: BookEditComponent,
-    data: { title: 'Edit Book' }
-  },
-  { path: '',
-    redirectTo: '/books',
-    pathMatch: 'full'
-  }
-]; */
+import { ArticleListComponent } from './entities/article/article-list/article-list.component';
+import { ArticleDetailComponent } from './entities/article/article-detail/article-detail.component';
+import { ArticleEditComponent } from './entities/article/article-edit/article-edit.component';
+import { ArticleCreateComponent } from './entities/article/article-create/article-create.component';
+
+
 @NgModule({
   declarations: [
     AppComponent,
-    BookComponent,
-    BookDetailComponent,
-    BookCreateComponent,
-    BookEditComponent,
-    MessagesComponent
+    MessagesComponent,
+    ClientListComponent,
+    ClientCreateComponent,
+    ClientDetailComponent,
+    ClientEditComponent,
+    ArticleListComponent,
+    ArticleDetailComponent,
+    ArticleEditComponent,
+    ArticleCreateComponent
   ],
   imports: [
     BrowserModule,
@@ -65,7 +50,7 @@ import {MessageService} from './message.service';
     FooterModule,
     HttpClientModule
   ],
-  providers: [BookService,MessageService],
+  providers: [ClientService, ArticleService, MessageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,0 +1,30 @@
+<div class="container">
+  <div class="card">
+      <div class="header">
+          <h4 class="title">Detail Client</h4>
+      </div>
+      <div class="content">
+          <form   #clientForm="ngForm">
+
+                      <div class="form-group">
+                          <label for="name">Name</label>
+                          <input type="text" class="form-control border-input" [(ngModel)]="client.name" name="name" disabled>
+                      </div>
+
+                      <div class="form-group">
+                          <label for="age">Age</label>
+                          <input type="number" class="form-control border-input" [(ngModel)]="client.age" name="age" disabled>
+                      </div>
+              <div class="form-group">
+                  <button class="btn btn-info  btn-fill btn-wd" type="button" (click)="goBack()">Go Back</button>
+                  <a [routerLink]="['/client-edit', client.id]" class="btn btn-success btn-fill btn-wd ">EDIT</a>
+                  <button class="btn btn-danger btn-fill btn-wd " type="button" (click)="deleteClient(client.id)">DELETE</button>
+                </div>
+              <div class="clearfix"></div>
+          </form>
+      </div>
+  </div>
+</div>
+
+
+

@@ -1,13 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import { RouteInfo } from '../route-info';
 
-//here we need to use global variable ...
-//don't forget to inject jquery lib in index.html ... 
-declare var $: any;
+import { RouteInfo } from '../models/route-info';
+
+
+declare let $: any;
 
 export const ROUTES: RouteInfo[] = [
-  { path: 'books', title: 'Books List',  icon: 'ti-view-list-alt', class: '' },
-  {path:'logs' ,title:'History Action',icon: 'ti-alarm-clock',class: ''}
+  { path: 'clients', title: 'Clients List',  icon: 'ti-view-list-alt', class: '' },
+  { path: 'articles', title: 'Articles List',  icon: 'ti-view-list-alt', class: '' },
+  {path: 'logs' , title: 'History Action', icon: 'ti-alarm-clock', class : ''}
 ];
 
 @Component({
@@ -21,8 +22,8 @@ export class SideBarComponent implements OnInit {
   ngOnInit() {
       this.menuItems = ROUTES.filter(menuItem => menuItem);
   }
-  isNotMobileMenu(){
-      if($(window).width() > 991){
+  isNotMobileMenu() {
+      if ($(window).width() > 991) {
           return false;
       }
       return true;

@@ -1,21 +1,27 @@
 import { Routes } from '@angular/router';
 
-import { BookComponent }   from './book/book.component';
-import { BookCreateComponent }   from './book-create/book-create.component';
-import { BookDetailComponent }   from './book-detail/book-detail.component';
-import { BookEditComponent }   from './book-edit/book-edit.component';
+import { ArticleListComponent } from './entities/article/article-list/article-list.component';
+import { ArticleCreateComponent } from './entities/article/article-create/article-create.component';
+import { ArticleEditComponent } from './entities/article/article-edit/article-edit.component';
+import { ArticleDetailComponent } from './entities/article/article-detail/article-detail.component';
+
+import { ClientListComponent } from './entities/client/client-list/client-list.component';
+import { ClientCreateComponent } from './entities/client/client-create/client-create.component';
+import { ClientEditComponent } from './entities/client/client-edit/client-edit.component';
+import { ClientDetailComponent } from './entities/client/client-detail/client-detail.component';
+
 import { MessagesComponent } from './messages/messages.component';
 
 export const AppRoutes: Routes = [
     {
         path: '',
-        redirectTo: 'books',
+        redirectTo: 'clients',
         pathMatch: 'full',
     },
     {
-        path: 'books',
-        component: BookComponent,
-        data: { title: 'Book List' }
+        path: 'clients',
+        component: ClientListComponent,
+        data: { title: 'Client List' }
     },
     {
         path: 'logs',
@@ -23,18 +29,38 @@ export const AppRoutes: Routes = [
         data: { title: 'logs List' }
       },
       {
-        path: 'book-details/:id',
-        component: BookDetailComponent,
-        data: { title: 'Book Details' }
+        path: 'client-details/:id',
+        component: ClientDetailComponent,
+        data: { title: ' Client Details' }
       },
       {
-        path: 'book-create',
-        component: BookCreateComponent,
-        data: { title: 'Create Book' }
+        path: 'client-create',
+        component: ClientCreateComponent,
+        data: { title: 'Create Client' }
       },
       {
-        path: 'book-edit/:id',
-        component: BookEditComponent,
-        data: { title: 'Edit Book' }
+        path: 'client-edit/:id',
+        component: ClientEditComponent,
+        data: { title: 'Edit Client' }
+      },
+      {
+        path: 'articles',
+        component: ArticleListComponent,
+        data: { title: 'Article List' }
+      },
+      {
+        path: 'article-details/:id',
+        component: ArticleDetailComponent,
+        data: { title: ' Article Details' }
+      },
+      {
+        path: 'article-create',
+        component: ArticleCreateComponent,
+        data: { title: 'Create Article' }
+      },
+      {
+        path: 'article-edit/:id',
+        component: ArticleEditComponent,
+        data: { title: 'Edit Article' }
       }
-]
+];

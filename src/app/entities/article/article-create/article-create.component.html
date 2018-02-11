@@ -1,0 +1,33 @@
+
+<div class="container">
+  <div class="card">
+      <div class="header">
+          <h4 class="title">Create Article</h4>
+      </div>
+      <div class="content">
+          <form  (ngSubmit)="saveArticle()" #articleForm="ngForm">
+                      <div class="form-group">
+                          <label for="name">Label</label>
+                          <input type="text" class="form-control border-input" [(ngModel)]="article.intitule" name="name" required>
+                      </div>
+                      <div class="form-group">
+                          <label for="quantity">Quantity</label>
+                          <input type="number" class="form-control border-input" [(ngModel)]="article.nombre" name="quantity" required>
+                      </div>
+                      <div class="form-group">
+                        <label for="owner">Client</label>
+                        <select name="name"[(ngModel)]="article.client" class="form-control border-input">
+                                <option *ngFor="let item of clients" [value]="item">
+                                {{item.client}}
+                                </option>
+                       </select>
+                  </div>
+              <div class="form-group">
+                  <button type="submit" class="btn btn-info btn-fill btn-wd" [disabled]="!articleForm.form.valid">Save</button>
+                </div>
+              <div class="clearfix"></div>
+          </form>
+      </div>
+  </div>
+</div>
+

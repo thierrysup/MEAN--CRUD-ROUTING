@@ -1,0 +1,43 @@
+
+<div class="container-fluid">
+  <div class="row">
+      <div class="col-md-12">
+          <div class="card">
+              <div class="header">
+                <div class=''>
+                    <h4 class="title">Article Table</h4>
+                    <p class="category">Table structure</p>
+                </div>
+                <div class=''>
+                    <a [routerLink]="['/article-create']">
+                      <i class='ti-plus'><b>New Entry</b></i>
+                  </a>
+                </div>
+              </div>
+              <div class=" body content table-responsive table-full-width">
+                  <table class="table table-striped">
+                      <thead>
+                          <tr>
+                              <th>Label</th>
+                              <th>Quantity</th>
+                              <th>Client</th>
+                              <th>Action</th>
+                          </tr>
+                      </thead>
+                      <tbody>
+                          <tr *ngFor="let item of articles">
+                              <td>{{ item.intitule }}</td>
+                              <td>{{ item.nombre }}</td>
+                              <td>{{ item.client.name }}</td>
+                              <td><a [routerLink]="['/article-details', item.id]">Show Detail</a></td>
+                            </tr>
+                      </tbody>
+                  </table>
+
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+
+

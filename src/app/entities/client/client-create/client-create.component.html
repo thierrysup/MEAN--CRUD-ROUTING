@@ -1,0 +1,25 @@
+
+<div class="container">
+  <div class="card">
+      <div class="header">
+          <h4 class="title">Create Client</h4>
+      </div>
+      <div class="content">
+          <form  (ngSubmit)="saveClient()" #clientForm="ngForm">
+                      <div class="form-group">
+                          <label for="name">Name</label>
+                          <input type="text" class="form-control border-input" [(ngModel)]="client.name" name="name" required>
+                      </div>
+                      <div class="form-group">
+                          <label for="age">Age</label>
+                          <input type="number" class="form-control border-input" [(ngModel)]="client.age" name="age" required>
+                      </div>
+              <div class="form-group">
+                  <button type="submit" class="btn btn-info btn-fill btn-wd" [disabled]="!clientForm.form.valid">Save</button>
+                </div>
+              <div class="clearfix"></div>
+          </form>
+      </div>
+  </div>
+</div>
+

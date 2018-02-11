@@ -1,10 +1,10 @@
 {
-  "name": "mean-angular5",
+  "name": "Symfony3-angular5",
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
     "ng": "ng",
-    "start": "ng build && node ./bin/www",
+    "start": "ng serve",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
