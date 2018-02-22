@@ -2,7 +2,7 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 
 import {Client} from '../../../models/client';
-import {ClientService, ArticleService} from '../../../services/providers';
+import {ClientService} from '../../../services/providers';
 import { Article } from '../../../models/article';
 
 @Component({
@@ -14,8 +14,7 @@ import { Article } from '../../../models/article';
 export class ClientListComponent implements OnInit {
 
   clients: Client[];
-  articlesByUser: Article[];
-  modalClient: Client;
+  modalClient: Client = new Client();
 
   constructor(private clientService: ClientService) { }
 
@@ -28,8 +27,8 @@ export class ClientListComponent implements OnInit {
     .subscribe(clients => this.clients = clients);
   }
 
-  updateArticle(id: any): void {
-    this.clientService.getClient(id).subscribe(client => {this.modalClient = client ; this.articlesByUser = client.articles; });
+  showArticlesByClient(client: any): void {
+    this.modalClient = client;
   }
 
 }
