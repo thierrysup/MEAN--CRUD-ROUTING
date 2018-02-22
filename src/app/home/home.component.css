@@ -1,0 +1,7 @@
+
+    .active   {
+      color: rgb(33, 25, 37) !important;
+    }
+    .nav-item.active{
+      background-color: darkred;
+    }

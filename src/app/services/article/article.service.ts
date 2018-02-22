@@ -69,7 +69,7 @@ export class ArticleService {
 
   /** POST: add a new article to the server */
   addArticle (article: Article): Observable<Article> {
-    return this.http.post<Article>(this.articlesUrl, article, httpOptions).pipe(
+    return this.http.post<Article>(this.articlesUrl + '/new', article, httpOptions).pipe(
       // tslint:disable-next-line:no-shadowed-variable
       tap(( article: Article) => this.log(`added article w/ id=${article.id}`)),
       catchError(this.handleError<Article>('addArticle'))
@@ -87,7 +87,7 @@ export class ArticleService {
 
   /** PUT: update the article on the server */
   updateArticle (article: Article): Observable<any> {
-    const url = `${this.articlesUrl}/${article.id}`;
+    const url = `${this.articlesUrl}/${article.id}/edit`;
     return this.http.put(url, article, httpOptions).pipe(
       tap(_ => this.log(`updated article id=${article.id}`)),
       catchError(this.handleError<any>('updateArticle'))

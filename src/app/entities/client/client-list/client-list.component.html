@@ -20,6 +20,7 @@
                           <tr>
                               <th>Name </th>
                               <th>Age </th>
+                              <th>Articles</th>
                               <th>Action</th>
                           </tr>
                       </thead>
@@ -27,6 +28,7 @@
                           <tr *ngFor="let item of clients">
                               <td>{{ item.name }}</td>
                               <td>{{ item.age }}</td>
+                              <td><a class="btn btn-info btn-sm" (click)="updateArticle(item.id)" data-toggle="modal" data-target="#myTableModal"  >{{ item.articles.length}}</a></td>
                               <td><a [routerLink]="['/client-details', item.id]">Show Detail</a></td>
                             </tr>
                       </tbody>
@@ -35,6 +37,43 @@
               </div>
           </div>
       </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div  id="myTableModal" class="modal fade" role="dialog" data-backdrop="false">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">{{modalClient.name | uppercase}} Articles</h4>
+      </div>
+      <div class="modal-body">
+          <div class=" body content table-responsive table-full-width">
+              <table class="table table-striped">
+                  <thead>
+                      <tr>
+                          <th>Label</th>
+                          <th>Quantity</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                      <tr *ngFor="let item of articlesByUser">
+                          <td>{{item.intitule}}</td>
+                          <td>{{item.nombre}}</td>
+                        </tr>
+                  </tbody>
+              </table>
+
+          </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
   </div>
 </div>
 

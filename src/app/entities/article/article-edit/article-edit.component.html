@@ -1,5 +1,5 @@
-<div class="container">
-  <div class="card">
+<div class="container-fluid">
+  <div class="card col-md-12">
       <div class="header">
           <h4 class="title">Edit Article</h4>
       </div>
@@ -12,14 +12,14 @@
                       </div>
 
                       <div class="form-group">
-                          <label for="age">Quantity</label>
+                          <label for="age" >Quantity</label>
                           <input type="number" class="form-control border-input" [(ngModel)]="article.nombre" name="age" required>
                       </div>
-                      <div class="form-group">
-                            <label for="owner">Client</label>
-                            <select name="name"[(ngModel)]="client" class="form-control border-input">
-                                    <option *ngFor="let item of clients" [value]="item">
-                                    {{item.client}}
+                      <div class="form-group" >
+                            <label for="owner" >Client</label>
+                            <select name="owner" [(ngModel)]="article.client.id" class="form-control border-input">
+                                    <option *ngFor="let item of clients" [value]="item.id">
+                                    {{item.name}}
                                     </option>
                            </select>
                       </div>

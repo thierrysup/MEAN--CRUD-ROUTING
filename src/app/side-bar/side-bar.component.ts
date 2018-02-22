@@ -2,12 +2,10 @@ import { Component, OnInit } from '@angular/core';
 
 import { RouteInfo } from '../models/route-info';
 
-
-declare let $: any;
+ declare let $: any;
 
 export const ROUTES: RouteInfo[] = [
-  { path: 'clients', title: 'Clients List',  icon: 'ti-view-list-alt', class: '' },
-  { path: 'articles', title: 'Articles List',  icon: 'ti-view-list-alt', class: '' },
+  { path: 'home', title: 'Home App',  icon: 'ti-view-list-alt', class: '' },
   {path: 'logs' , title: 'History Action', icon: 'ti-alarm-clock', class : ''}
 ];
 

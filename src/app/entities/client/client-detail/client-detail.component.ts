@@ -33,9 +33,12 @@ export class ClientDetailComponent implements OnInit {
   goBack(): void {
     this.location.back();
   }
+  goTable(): void {
+    this.router.navigate(['home/clients']);
+  }
 
   deleteClient(id) {
-    this.clientService.deleteClient(id).subscribe(() => this.goBack());
+    this.clientService.deleteClient(id).subscribe(() => this.goTable());
   }
 
 }

@@ -1,5 +1,5 @@
-<div class="container">
-  <div class="card">
+<div class="container-fluid">
+  <div class="card col-md-12">
       <div class="header">
           <h4 class="title">Detail Article</h4>
       </div>
@@ -7,18 +7,19 @@
           <form   #articleForm="ngForm">
 
                       <div class="form-group">
-                          <label for="name">Label</label>
-                          <input type="text" class="form-control border-input" [(ngModel)]="article.intitule" name="name" disabled>
+                          <label for="nom">Label</label>
+                          <input type="text" class="form-control border-input" [(ngModel)]="article.intitule" name="nom"   disabled>
                       </div>
                       <div class="form-group">
-                          <label for="quantity">Quantity</label>
-                          <input type="number" class="form-control border-input" [(ngModel)]="article.nombre" name="quantity" disabled>
+                          <label for="quant">Quantity</label>
+                          <input type="number" class="form-control border-input" [(ngModel)]="article.nombre" name="quant"  disabled>
                       </div>
                       <div class="form-group">
                         <label for="user">Client</label>
-                        <input type="text" class="form-control border-input" [(ngModel)]="article.client.name" name="user" disabled>
+                        <input type="text" class="form-control border-input" [(ngModel)]="article.client.name" name="user"  disabled>
                     </div>
               <div class="form-group">
+                  <button class="btn btn-primary  btn-fill btn-wd" type="button" (click)="goTable()">Home</button>
                   <button class="btn btn-info  btn-fill btn-wd" type="button" (click)="goBack()">Go Back</button>
                   <a [routerLink]="['/article-edit', article.id]" class="btn btn-success btn-fill btn-wd ">EDIT</a>
                   <button class="btn btn-danger btn-fill btn-wd " type="button" (click)="deleteArticle(article.id)">DELETE</button>

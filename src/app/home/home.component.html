@@ -1,0 +1,22 @@
+<div class="col-sm-12">
+    <div class="card tabs-card">
+        <div class="card-block p-0">
+            <ul class="nav nav-tabs md-tabs" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active"  [routerLink]="['clients']"  routerLinkActive="active" data-toggle="tab" href="#home3" role="tab"><i class="fa fa-users"></i>Clients</a>
+                    <div class="slide"></div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link"  [routerLink]="['articles']"  routerLinkActive="active" data-toggle="tab" href="#home3" role="tab"><i class="fa fa-shopping-cart"></i>Article</a>
+                    <div class="slide"></div>
+                </li>
+            </ul>
+            <div class="tab-content card-block">
+                <div class="tab-pane active" id="home3" role="tabpanel">
+                  <router-outlet></router-outlet>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+

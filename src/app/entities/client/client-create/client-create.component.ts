@@ -24,7 +24,7 @@ export class ClientCreateComponent implements OnInit {
   }
   saveClient() {
        this.clientService.addClient(this.client).subscribe(client => {
-            this.router.navigate(['/clients']);
+            this.router.navigate(['home/clients']);
           }
       );
     }

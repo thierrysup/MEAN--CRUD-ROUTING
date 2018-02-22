@@ -1,4 +1,7 @@
-import { Routes } from '@angular/router';
+
+
+
+import { Routes, ChildrenOutletContexts } from '@angular/router';
 
 import { ArticleListComponent } from './entities/article/article-list/article-list.component';
 import { ArticleCreateComponent } from './entities/article/article-create/article-create.component';
@@ -11,18 +14,29 @@ import { ClientEditComponent } from './entities/client/client-edit/client-edit.c
 import { ClientDetailComponent } from './entities/client/client-detail/client-detail.component';
 
 import { MessagesComponent } from './messages/messages.component';
+import { HomeComponent } from './home/home.component';
 
-export const AppRoutes: Routes = [
+export const appRoutes: Routes = [
     {
         path: '',
-        redirectTo: 'clients',
+        redirectTo: 'home',
         pathMatch: 'full',
-    },
+    }
+    ,  {
+        path: 'home',
+        component: HomeComponent,
+        data: { title: 'Home App' },
+        children: [
+          {path: 'clients', component: ClientListComponent, data: { title: 'Client List'}},
+          {path: 'articles', component: ArticleListComponent, data: { title: 'Article List'}},
+          {path: '', redirectTo: '/home/clients', pathMatch: 'full' }
+        ]
+    }/* ,
     {
         path: 'clients',
         component: ClientListComponent,
         data: { title: 'Client List' }
-    },
+    } */,
     {
         path: 'logs',
         component: MessagesComponent,
@@ -42,12 +56,12 @@ export const AppRoutes: Routes = [
         path: 'client-edit/:id',
         component: ClientEditComponent,
         data: { title: 'Edit Client' }
-      },
+      }/* ,
       {
         path: 'articles',
         component: ArticleListComponent,
         data: { title: 'Article List' }
-      },
+      } */,
       {
         path: 'article-details/:id',
         component: ArticleDetailComponent,
@@ -62,5 +76,6 @@ export const AppRoutes: Routes = [
         path: 'article-edit/:id',
         component: ArticleEditComponent,
         data: { title: 'Edit Article' }
-      }
+      },
+      { path: '**', redirectTo: '/home' }
 ];

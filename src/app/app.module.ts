@@ -4,10 +4,11 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule, Routes } from '@angular/router';
 
-import { AppRoutes } from './app.routing';
+import { appRoutes } from './app.routing';
 import {SideBarModule} from './side-bar/side-bar.module';
 import {NavBarModule} from './nav-bar/nav-bar.module';
 import {FooterModule} from './footer/footer.module';
+import {HomeModule} from './home/home.module';
 
 import {MessageService} from './services/message/message.service';
 import {ArticleService} from './services/providers';
@@ -23,6 +24,7 @@ import { ArticleListComponent } from './entities/article/article-list/article-li
 import { ArticleDetailComponent } from './entities/article/article-detail/article-detail.component';
 import { ArticleEditComponent } from './entities/article/article-edit/article-edit.component';
 import { ArticleCreateComponent } from './entities/article/article-create/article-create.component';
+// import { HomeComponent } from './home/home.component';
 
 
 @NgModule({
@@ -36,17 +38,19 @@ import { ArticleCreateComponent } from './entities/article/article-create/articl
     ArticleListComponent,
     ArticleDetailComponent,
     ArticleEditComponent,
-    ArticleCreateComponent
+    ArticleCreateComponent,
+  //  HomeComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     RouterModule.forRoot(
-      AppRoutes,
+      appRoutes,
       { enableTracing: true } // <-- debugging purposes only
     ),
     SideBarModule,
     NavBarModule,
+    HomeModule,
     FooterModule,
     HttpClientModule
   ],

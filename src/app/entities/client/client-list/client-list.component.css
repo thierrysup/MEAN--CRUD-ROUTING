@@ -1,0 +1,8 @@
+/* this style solve blurry problems in modal content */
+.modal.in .modal-dialog,
+.modal.fade .modal-dialog {
+-webkit-transform: inherit !important;
+-moz-transform: inherit !important;
+-o-transform: inherit !important;
+transform: inherit !important;
+}

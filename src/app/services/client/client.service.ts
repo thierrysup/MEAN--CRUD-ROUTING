@@ -70,7 +70,7 @@ export class ClientService {
 
   /** POST: add a new client to the server */
   addClient (client: Client): Observable<Client> {
-    return this.http.post<Client>(this.clientsUrl, client, httpOptions).pipe(
+    return this.http.post<Client>(this.clientsUrl + '/new', client, httpOptions).pipe(
       // tslint:disable-next-line:no-shadowed-variable
       tap(( client: Client) => this.log(`added client w/ id=${client.id}`)),
       catchError(this.handleError<Client>('addClient'))
@@ -88,7 +88,7 @@ export class ClientService {
 
   /** PUT: update the client on the server */
   updateClient (client: Client): Observable<any> {
-    const url = `${this.clientsUrl}/${client.id}`;
+    const url = `${this.clientsUrl}/${client.id}/edit`;
     return this.http.put(url, client, httpOptions).pipe(
       tap(_ => this.log(`updated client id=${client.id}`)),
       catchError(this.handleError<any>('updateClient'))

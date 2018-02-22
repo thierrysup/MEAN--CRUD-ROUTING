@@ -19,10 +19,11 @@ export class ArticleDetailComponent implements OnInit {
   article: Article = new Article();
 
   constructor(private router: Router, private route: ActivatedRoute,
-    private location: Location, private articleService: ArticleService) { }
+    private location: Location, private articleService: ArticleService) {
+    this.getArticleDetail(this.route.snapshot.params['id']);
+     }
 
   ngOnInit() {
-    this.getArticleDetail(this.route.snapshot.params['id']);
   }
 
   getArticleDetail(id) {
@@ -34,8 +35,12 @@ export class ArticleDetailComponent implements OnInit {
     this.location.back();
   }
 
+  goTable(): void {
+    this.router.navigate(['']);
+  }
+
   deleteArticle(id) {
-    this.articleService.deleteArticle(id).subscribe(() => this.goBack());
+    this.articleService.deleteArticle(id).subscribe(() => this.goTable());
   }
 
 }
